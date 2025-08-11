@@ -1,0 +1,130 @@
+{
+  "name": "bilingual-ai-prompt-pack",
+  "version": "1.0.0",
+  "description": "A comprehensive collection of professionally engineered AI prompts in both Arabic and English | مجموعة شاملة من البرومبتات المهندسة احترافياً للذكاء الاصطناعي باللغتين العربية والإنجليزية",
+  "main": "index.js",
+  "scripts": {
+    "validate": "node scripts/validate-prompts.js",
+    "build": "node scripts/build-docs.js",
+    "test": "jest --coverage",
+    "lint": "eslint . --ext .js,.md",
+    "format": "prettier --write \"/*.{js,md,json}\"",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "deploy": "npm run build && npm run validate",
+    "count-prompts": "node scripts/count-prompts.js",
+    "generate-index": "node scripts/generate-index.js",
+    "check-translations": "node scripts/check-translations.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/bilingual-ai-prompt-pack.git"
+  },
+  "keywords": [
+    "ai",
+    "artificial-intelligence",
+    "prompts",
+    "prompt-engineering",
+    "arabic",
+    "english",
+    "bilingual",
+    "nlp",
+    "chatgpt",
+    "claude",
+    "gemini",
+    "content-creation",
+    "business",
+    "education",
+    "technical-writing",
+    "creative-writing",
+    "data-analysis",
+    "marketing",
+    "documentation",
+    "templates",
+    "open-source",
+    "ai-tools",
+    "machine-learning",
+    "language-models",
+    "gpt",
+    "llm"
+  ],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com",
+    "url": "https://github.com/yourusername"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/bilingual-ai-prompt-pack/issues"
+  },
+  "homepage": "https://github.com/yourusername/bilingual-ai-prompt-pack#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-markdown": "^3.0.0",
+    "jest": "^29.0.0",
+    "nodemon": "^3.0.0",
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.0",
+    "markdown-it": "^13.0.0",
+    "js-yaml": "^4.1.0",
+    "glob": "^10.0.0",
+    "chalk": "^5.0.0"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/yourusername"
+  },
+  "config": {
+    "directories": {
+      "prompts": "prompts",
+      "templates": "templates",
+      "examples": "examples",
+      "docs": "docs"
+    },
+    "supported_languages": ["english", "arabic"],
+    "categories": [
+      "content-creation",
+      "business-marketing", 
+      "education",
+      "technical",
+      "creative",
+      "data-analysis"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "scripts//*.js",
+      "!scripts/templates/"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  },
+  "eslintConfig": {
+    "extends": ["eslint:recommended", "prettier"],
+    "env": {
+      "node": true,
+      "es2021": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    }
+  }
+}
