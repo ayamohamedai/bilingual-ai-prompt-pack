@@ -1,0 +1,127 @@
+# .github/ISSUE_TEMPLATE/prompt_request.md
+---
+name: Prompt Request
+about: Request a new prompt for the collection
+title: '[REQUEST] Brief description of needed prompt'
+labels: enhancement, prompt-request
+assignees: ''
+---
+
+## Prompt Category
+- [ ] Content Creation
+- [ ] Business & Marketing  
+- [ ] Education & Learning
+- [ ] Technical Writing
+- [ ] Creative Writing
+- [ ] Data Analysis
+- [ ] Other (specify)
+
+## Language(s)
+- [ ] English
+- [ ] Arabic
+- [ ] Both
+
+## Description
+Describe the type of prompt you need and its intended use case.
+
+## Example Use Case
+Provide a specific example of how this prompt would be used.
+
+---
+
+# CONTRIBUTING.md
+# Contributing Guidelines
+## دليل المساهمة
+
+### How to Contribute / كيفية المساهمة
+
+*English:*
+1. Fork the repository
+2. Create a feature branch
+3. Add your prompts following the established format
+4. Test your prompts for effectiveness
+5. Submit a pull request with detailed description
+
+*العربية:*
+1. انسخ المستودع (Fork)
+2. أنشئ فرع خاصية جديد
+3. أضف برومبتاتك باتباع التنسيق المحدد
+4. اختبر برومبتاتك للتأكد من فعاليتها
+5. قدم طلب سحب مع وصف مفصل
+
+### Prompt Quality Standards / معايير جودة البرومبت
+
+*English:*
+- Clear and specific instructions
+- Appropriate context and constraints
+- Professional language and tone
+- Tested and validated results
+- Proper categorization
+
+*العربية:*
+- تعليمات واضحة ومحددة
+- سياق وقيود مناسبة
+- لغة ونبرة احترافية
+- نتائج مختبرة ومتحققة
+- تصنيف صحيح
+
+---
+
+# package.json
+{
+  "name": "bilingual-prompt-pack",
+  "version": "1.0.0",
+  "description": "Professional AI prompts in Arabic and English",
+  "main": "index.js",
+  "scripts": {
+    "validate": "node scripts/validate-prompts.js",
+    "build": "node scripts/build-docs.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "AI",
+    "prompts",
+    "Arabic",
+    "English",
+    "bilingual",
+    "prompt-engineering"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/bilingual-prompt-pack.git"
+  }
+}
+
+---
+
+# scripts/validate-prompts.js
+const fs = require('fs');
+const path = require('path');
+
+function validatePrompts() {
+    const promptsDir = path.join(__dirname, '../prompts');
+    const categories = fs.readdirSync(promptsDir);
+    
+    categories.forEach(category => {
+        const categoryPath = path.join(promptsDir, category);
+        if (fs.statSync(categoryPath).isDirectory()) {
+            const languages = ['english', 'arabic'];
+            
+            languages.forEach(lang => {
+                const langPath = path.join(categoryPath, lang);
+                if (fs.existsSync(langPath)) {
+                    const files = fs.readdirSync(langPath);
+                    files.forEach(file => {
+                        if (file.endsWith('.md')) {
+                            console.log(✅ Found: ${category}/${lang}/${file});
+                        }
+                    });
+                }
+            });
+        }
+    });
+}
+
+validatePrompts();
